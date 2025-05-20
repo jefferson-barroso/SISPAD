@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService, Usuario } from 'src/app/services/usuario.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-cadastros',
@@ -15,7 +16,8 @@ export class ListarCadastrosComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -65,5 +67,9 @@ export class ListarCadastrosComponent implements OnInit {
     // Exemplo:
     // this.router.navigate(['/editar-usuario', usuario.id]);
     alert(`Implementar edição para usuário: ${usuario.txNome}`);
+  }
+
+    voltar() {
+    this.router.navigate(['']);
   }
 }

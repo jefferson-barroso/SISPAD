@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { EditarCadastroComponent } from './tela-inicial/editar-cadastro/editar-cadastro.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     TelaInicialComponent,
     CadastrarUsuarioComponent,
     ListarCadastrosComponent,
+    EditarCadastroComponent,
   ],
   imports: [
     BrowserModule,
