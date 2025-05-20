@@ -12,17 +12,17 @@
 
 .card {
   background: rgba(255, 255, 255, 0.9);
-  padding: 4.5rem 3rem;       /* Aumentado o padding */
+  padding: 4.5rem 3rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  min-width: 420px;           /* Aumentado o mínimo da largura */
+  min-width: 420px;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
 }
 
 .title {
   font-weight: 700;
-  font-size: 2.8rem;          /* Fonte maior para o título */
+  font-size: 2.8rem;
   color: #003366;
   margin-bottom: 2.5rem;
 }
@@ -30,33 +30,33 @@
 .button-group {
   display: flex;
   flex-direction: column;
-  gap: 2rem;                 /* Espaçamento maior entre os botões */
+  gap: 2rem;
 }
 
 .btn {
   background-color: #fff5cc;
   border: none;
   border-radius: 8px;
-  padding: 1.3rem 1.8rem;     /* Botão maior */
-  font-size: 1.4rem;          /* Texto maior */
+  padding: 1.3rem 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #665500;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;                 /* Espaço maior entre ícone e texto */
+  gap: 1rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 3px 8px rgba(102, 85, 0, 0.3); /* Sombra um pouco maior */
+  box-shadow: 0 3px 8px rgba(102, 85, 0, 0.3);
   user-select: none;
 }
 
 .btn:hover {
-  transform: scale(1.07);     /* Hover um pouco mais perceptível */
+  transform: scale(1.07);
   box-shadow: 0 6px 16px rgba(102, 85, 0, 0.45);
 }
 
 .icon {
   font-variation-settings: 'wght' 400;
-  font-size: 2.2rem;          /* Ícone maior */
+  font-size: 2.2rem;
 }
