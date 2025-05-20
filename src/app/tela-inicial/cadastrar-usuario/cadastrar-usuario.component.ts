@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuarioService, Usuario } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 export class CadastrarUsuarioComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -20,17 +25,12 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigate(['listar-cadastros']);
+    this.router.navigate(['']);
   }
 
-
   onSubmit() {
-
-    /*
     if (this.form.valid) {
       const formValues = this.form.value;
-
-      // Mapear os campos para o formato esperado pela API
       const usuario: Usuario = {
         txNome: formValues.nome,
         stStatus: formValues.status,
@@ -38,15 +38,14 @@ export class CadastrarUsuarioComponent implements OnInit {
 
       this.usuarioService.cadastrarUsuario(usuario).subscribe({
         next: (res) => {
-          this.toastr.success(`Usuário ${res.txNome} cadastrado com sucesso!`);
+          alert(`Usuário ${res.txNome} cadastrado com sucesso!`);
           this.form.reset({ status: 'A' });
-          this.router.navigate(['']); // volta para tela inicial
         },
         error: (err) => {
-          this.toastr.error('Erro ao cadastrar usuário.');
-          console.error(err);
+          console.error('Erro ao cadastrar usuário:', err);
+          alert('Erro ao cadastrar usuário.');
         },
       });
-      */
-}
+    }
+  }
 }
