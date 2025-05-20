@@ -5,9 +5,13 @@ import { AppComponent } from './app.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { CadastrarUsuarioComponent } from './tela-inicial/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarCadastrosComponent } from './tela-inicial/listar-cadastros/listar-cadastros.component';
-import { BuscarUsuarioComponent } from './tela-inicial/buscar-usuario/buscar-usuario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -16,12 +20,16 @@ import { AppRoutingModule } from './app-routing.module';
     TelaInicialComponent,
     CadastrarUsuarioComponent,
     ListarCadastrosComponent,
-    BuscarUsuarioComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    TableModule,
+    ToastModule,
+    ConfirmDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

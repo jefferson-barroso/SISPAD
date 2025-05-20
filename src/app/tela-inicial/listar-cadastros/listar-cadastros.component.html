@@ -1,1 +1,42 @@
-<p>listar-cadastros works!</p>
+<div class="background">
+<div class="card">
+  <h2>Lista de Usuários</h2>
+
+  <div class="p-inputgroup" style="margin-bottom: 1rem;">
+    <input
+      pInputText
+      type="text"
+      placeholder="Pesquisar por nome"
+      [(ngModel)]="filtroNome"
+      (input)="pesquisar()"
+    />
+    <button pButton type="button" icon="pi pi-search" (click)="pesquisar()"></button>
+  </div>
+
+  <p-table [value]="usuarios" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20]" [responsiveLayout]="'scroll'">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Ações</th>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Status</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-usuario>
+      <tr>
+        <td>
+          <button pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(usuario)" title="Editar"></button>
+          <button pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="confirmarExcluir(usuario)" title="Excluir"></button>
+        </td>
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.txNome }}</td>
+        <td>{{ usuario.stStatus === 'A' ? 'Ativo' : 'Inativo' }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-toast></p-toast>
+  <p-confirmDialog></p-confirmDialog>
+</div>
+</div>

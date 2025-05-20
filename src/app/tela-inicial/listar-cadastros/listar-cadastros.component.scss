@@ -1,0 +1,123 @@
+.background{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://st2.depositphotos.com/3283585/5383/v/450/depositphotos_53839577-stock-illustration-vector-pattern-with-hand-drawn.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1rem;
+
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  overflow: hidden;
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.p-inputgroup {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.p-inputgroup input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.p-inputgroup button {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.p-inputgroup button:hover {
+  background-color: #002244;
+}
+
+.p-table {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.p-table th {
+  background-color: #003366;
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.p-table td {
+  text-align: center;
+  padding: 1rem;
+}
+
+.p-button-rounded {
+  padding: 0.8rem;
+  border-radius: 50%;
+}
+
+.p-button-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.p-button-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.p-button-rounded:hover {
+  opacity: 0.8;
+}
+
+.p-toast {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.p-toast .p-toast-message {
+  background-color: #003366;
+  color: white;
+  border-radius: 8px;
+}
+
+.p-confirmDialog {
+  z-index: 9999;
+}
+
