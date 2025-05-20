@@ -1,1 +1,52 @@
-<p>cadastrar-usuario works!</p>
+<div class="page-container">
+  <div class="card cadastro-card">
+    <h2 class="card-title">Cadastro Usuário</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- seu formulário aqui -->
+      <label for="nome" class="label">Nome</label>
+      <input
+        id="nome"
+        type="text"
+        formControlName="nome"
+        placeholder="Digite o nome"
+        class="input-text"
+        required
+      />
+
+      <fieldset class="status-group">
+        <legend>Status</legend>
+
+        <label>
+          <input
+            type="radio"
+            formControlName="status"
+            value="A"
+          />
+          Ativo
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            formControlName="status"
+            value="I"
+          />
+          Inativo
+        </label>
+
+      </fieldset>
+
+      <button type="submit" [disabled]="form.invalid" class="btn-cadastrar">
+        Cadastrar
+      </button>
+      <br>
+      <br>
+      <button type="button" class="btn-voltar" (click)="voltar()">
+         Voltar
+     </button>
+
+
+    </form>
+  </div>
+</div>

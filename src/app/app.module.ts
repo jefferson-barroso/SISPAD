@@ -6,6 +6,9 @@ import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { CadastrarUsuarioComponent } from './tela-inicial/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarCadastrosComponent } from './tela-inicial/listar-cadastros/listar-cadastros.component';
 import { BuscarUsuarioComponent } from './tela-inicial/buscar-usuario/buscar-usuario.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { BuscarUsuarioComponent } from './tela-inicial/buscar-usuario/buscar-usu
     BuscarUsuarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
