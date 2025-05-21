@@ -3,7 +3,6 @@
     <h2 class="card-title">Editar Cadastro</h2>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <!-- seu formulário aqui -->
       <label for="nome" class="label">Nome</label>
       <input
         id="nome"
@@ -18,33 +17,22 @@
         <legend>Status</legend>
 
         <label>
-          <input
-            type="radio"
-            formControlName="status"
-            value="A"
-          />
+          <input type="radio" formControlName="status" value="A" />
           Ativo
         </label>
 
         <label>
-          <input
-            type="radio"
-            formControlName="status"
-            value="I"
-          />
+          <input type="radio" formControlName="status" value="I" />
           Inativo
         </label>
-
       </fieldset>
 
-      <button type="submit" [disabled]="form.invalid" class="btn-cadastrar">
-        Atualizar
-      </button>
-      <br>
-      <br>
+      <button type="submit" class="btn-cadastrar">Atualizar</button>
+      <br />
+      <br />
       <button type="button" class="btn-voltar" (click)="voltar()">
-         Voltar
-     </button>
+        Voltar
+      </button>
     </form>
   </div>
 </div>

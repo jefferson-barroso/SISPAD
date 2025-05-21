@@ -6,7 +6,7 @@ import { UsuarioService, Usuario } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-cadastrar-usuario',
   templateUrl: './cadastrar-usuario.component.html',
-  styleUrls: ['./cadastrar-usuario.component.scss']
+  styleUrls: ['./cadastrar-usuario.component.scss'],
 })
 export class CadastrarUsuarioComponent implements OnInit {
   form!: FormGroup;
@@ -20,7 +20,7 @@ export class CadastrarUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       nome: ['', Validators.required],
-      status: ['A', Validators.required]
+      status: ['A', Validators.required],
     });
   }
 
@@ -32,6 +32,7 @@ export class CadastrarUsuarioComponent implements OnInit {
     if (this.form.valid) {
       const formValues = this.form.value;
       const usuario: Usuario = {
+        codUsuario: formValues.codUsuario,
         txNome: formValues.nome,
         stStatus: formValues.status,
       };

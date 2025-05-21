@@ -13,6 +13,9 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { EditarCadastroComponent } from './tela-inicial/editar-cadastro/editar-cadastro.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
+
 
 
 @NgModule({
@@ -32,8 +35,13 @@ import { EditarCadastroComponent } from './tela-inicial/editar-cadastro/editar-c
     TableModule,
     ToastModule,
     ConfirmDialogModule,
+    BrowserAnimationsModule,
+
+
   ],
-  providers: [],
+  providers: [
+    MessageService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

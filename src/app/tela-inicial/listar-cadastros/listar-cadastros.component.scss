@@ -1,4 +1,4 @@
-.background{
+.background {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -9,7 +9,11 @@
   background-position: center;
   background-repeat: no-repeat;
   padding: 1rem;
+}
 
+.body{
+  align-items: center;
+  text-align: center;
 }
 
 .card {
@@ -46,7 +50,7 @@
   padding: 0.8rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .p-inputgroup button {
@@ -63,41 +67,28 @@
   background-color: #002244;
 }
 
-.p-table {
+p-table {
   width: 100%;
   margin-top: 2rem;
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
 }
 
-.p-table th {
+p-table th {
   background-color: #003366;
   color: white;
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: center;
+  font-weight: bold;
 }
 
-.p-table td {
+p-table td {
   text-align: center;
-  padding: 1rem;
-}
-
-.p-button-rounded {
-  padding: 0.8rem;
-  border-radius: 50%;
-}
-
-.p-button-success {
-  background-color: #28a745;
-  border: none;
-}
-
-.p-button-danger {
-  background-color: #dc3545;
-  border: none;
+  padding: 1.0rem;
 }
 
 .p-button-rounded:hover {
@@ -125,7 +116,7 @@
   background-color: transparent;
   border: none;
   color: #003366;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
   margin-top: 0.8rem;
@@ -135,3 +126,36 @@
   transition: color 0.2s ease;
   margin: 0.8rem auto 0;
 }
+
+.btn-editar {
+  background-color: #28a745 !important;
+  color: white !important;
+  font-size: 2rem;
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-editar:hover {
+  background-color: #218838 !important;
+}
+
+.btn-excluir {
+  background-color: #dc3545 !important;
+  color: white !important;
+  font-size: 2rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333 !important;
+}
+
+

@@ -1,55 +1,78 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService, Usuario } from 'src/app/services/usuario.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
+
 @Component({
   selector: 'app-editar-cadastro',
   templateUrl: './editar-cadastro.component.html',
-  styleUrls: ['./editar-cadastro.component.scss']
+  styleUrls: ['./editar-cadastro.component.scss'],
 })
 export class EditarCadastroComponent implements OnInit {
+  form!: FormGroup;
 
-form!: FormGroup;
-
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private usuarioService: UsuarioService,
+    private router: Router,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
       nome: ['', Validators.required],
-      status: ['A', Validators.required]
+      status: ['A', Validators.required],
+    });
+
+    const id = Number(this.route.snapshot.paramMap.get('codUsuario'));
+
+    if (id) {
+      this.usuarioService.buscarUsuarioPorId(id).subscribe({
+        next: (usuario) => {
+          this.preencherFormulario(usuario);
+        },
+        error: (err) => console.error('Erro ao buscar usuário:', err),
+      });
+    }
+  }
+
+  preencherFormulario(usuario: Usuario) {
+    this.form.patchValue({
+      nome: usuario.txNome,
+      status: usuario.stStatus,
     });
   }
 
-  /*Colocar para voltar no listar cadastros */
-
-  voltar() {
-    this.router.navigate(['']);
-  }
-
-
   onSubmit() {
-
-    /*
     if (this.form.valid) {
+      const id = Number(this.route.snapshot.paramMap.get('codUsuario'));
       const formValues = this.form.value;
 
-      // Mapear os campos para o formato esperado pela API
-      const usuario: Usuario = {
+      const usuarioAtualizado: Usuario = {
+        codUsuario: id,
         txNome: formValues.nome,
         stStatus: formValues.status,
       };
 
-      this.usuarioService.cadastrarUsuario(usuario).subscribe({
+      this.usuarioService.atualizarUsuario(id, usuarioAtualizado).subscribe({
         next: (res) => {
-          this.toastr.success(`Usuário ${res.txNome} cadastrado com sucesso!`);
-          this.form.reset({ status: 'A' });
-          this.router.navigate(['']); // volta para tela inicial
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Atualizado',
+            detail: 'Usuário atualizado com sucesso.',
+          });
+          this.router.navigate(['/listar-cadastros']);
         },
         error: (err) => {
-          this.toastr.error('Erro ao cadastrar usuário.');
-          console.error(err);
+          console.error('Erro ao atualizar usuário:', err);
         },
       });
-      */
-}
+    }
+  }
 
+  voltar() {
+    this.router.navigate(['/listar-cadastros']);
+  }
 }

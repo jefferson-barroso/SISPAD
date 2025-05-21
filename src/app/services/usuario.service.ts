@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Usuario {
-  id?: number;
+  codUsuario?: number;
   txNome: string;
-  stStatus: string;  // "A" ou "I"
+  stStatus: string;
 }
 
 @Injectable({

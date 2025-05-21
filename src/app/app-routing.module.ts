@@ -6,11 +6,12 @@ import { CadastrarUsuarioComponent } from './tela-inicial//cadastrar-usuario/cad
 import { ListarCadastrosComponent } from './tela-inicial/listar-cadastros/listar-cadastros.component';
 import { EditarCadastroComponent } from './tela-inicial/editar-cadastro/editar-cadastro.component';
 
+
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
   { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent },
   { path: 'listar-cadastros', component: ListarCadastrosComponent },
-  { path: 'editar-cadastro', component: EditarCadastroComponent}
+  { path: 'editar-cadastro/:codUsuario', component: EditarCadastroComponent}
 ];
 
 @NgModule({
