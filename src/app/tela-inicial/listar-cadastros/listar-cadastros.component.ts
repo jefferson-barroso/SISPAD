@@ -32,7 +32,6 @@ export class ListarCadastrosComponent implements OnInit {
     this.usuarioService.listarUsuarios().subscribe({
       next: (dados) => {
         this.usuarios = dados;
-        console.log(this.usuarios);
       },
       error: (err) => console.error(err),
     });

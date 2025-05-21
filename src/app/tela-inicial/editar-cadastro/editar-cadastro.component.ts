@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService, Usuario } from 'src/app/services/usuario.service';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-editar-cadastro',
@@ -57,7 +57,7 @@ export class EditarCadastroComponent implements OnInit {
       };
 
       this.usuarioService.atualizarUsuario(id, usuarioAtualizado).subscribe({
-        next: (res) => {
+        next: () => {
           this.messageService.add({
             severity: 'success',
             summary: 'Atualizado',

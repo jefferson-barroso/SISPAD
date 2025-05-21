@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+
+.p-toast-message-success {
+  background-color: #006400 !important;
+  color: #fff !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 10px rgba(0, 100, 0, 0.5);
+}
+
+.p-toast-message-error {
+  background-color: #8B0000 !important;
+  color: #fff !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.5);
+}
+
+.p-toast-summary {
+  font-size: 1.4rem !important;
+}
+
+.p-toast-detail {
+  font-size: 1.1rem !important;
+  font-weight: 500;
+}
+
+.p-toast {
+  top: 40px !important;
+  right: 20px !important;
+  width: 350px !important;
+  z-index: 1200 !important;
+}
+
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-pages .p-paginator-page {
+  min-width: 3.2rem !important;
+  min-height: 3.2rem !important;
+  font-size: 1.25rem !important;
+  border-radius: 0.5rem !important;
+  margin: 0 0.2rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.p-paginator {
+  padding: 0.5rem 1rem;
+}
+
+.p-paginator .p-paginator-prev:hover,
+.p-paginator .p-paginator-next:hover,
+.p-paginator .p-paginator-page:hover {
+  background-color: #005a9e !important;
+  color: white !important;
+  font-weight: bold;
+}
