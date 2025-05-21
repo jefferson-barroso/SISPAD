@@ -49,6 +49,7 @@ export class CadastrarUsuarioComponent implements OnInit {
           life: 3000
         });
          this.form.reset({ status: 'A' });
+         this.voltar();
         },
         error: (err) => {
         this.messageService.add({
